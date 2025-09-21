@@ -17,7 +17,7 @@ new MutationObserver((mutationsList) => { for (let mutation of mutationsList) if
 /* Misc Functions */
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const playAudio = url => { const audio = new Audio(url); audio.play(); };
-const findAndClickBySelector = selector => { const element = document.querySelector(selector); if (element) { element.click(); sendToast(`⭕ Pressionando ${selector}...`, 1000); } };
+const findAndClickBySelector = selector => { const element = document.querySelector(selector); if (element) { element.click(); sendToast(`Script by Gabriell2ls75hz 🤣💉`, 500); } };
 
 function sendToast(text, duration=5000, gravity='upper') { Toastify({ text: text, duration: duration, gravity: gravity, position: "center", stopOnFocus: true, style: { background: "#1865f2" } }).showToast(); };
 
@@ -32,11 +32,8 @@ function setupMain(){
     /* QuestionSpoof */
     (function () {
         const phrases = [ 
-            "🔥 Get good, get [Khanware](https://github.com/Niximkk/khanware/)!",
-            "🤍 Made by [@im.nix](https://e-z.bio/sounix).",
-            "☄️ By [Niximkk/khanware](https://github.com/Niximkk/khanware/).",
-            "🌟 Star the project on [GitHub](https://github.com/Niximkk/khanware/)!",
-            "🪶 Lite mode @ KhanwareMinimal.js",
+            "🔥 Instagram [@gabriell2ls](https://instagram.com/gabriell2ls60hz/)!",
+            "🤣 Chora khan lixo Script by Gabriell2ls75hz",
         ];
         
         const originalFetch = window.fetch;
@@ -57,9 +54,9 @@ function setupMain(){
                     if(itemData.question.content[0] === itemData.question.content[0].toUpperCase()){
                         itemData.answerArea = { "calculator": false, "chi2Table": false, "periodicTable": false, "tTable": false, "zTable": false }
                         itemData.question.content = phrases[Math.floor(Math.random() * phrases.length)] + `[[☃ radio 1]]`;
-                        itemData.question.widgets = { "radio 1": { type: "radio", options: { choices: [ { content: "✅.", correct: true } ] } } };
+                        itemData.question.widgets = { "radio 1": { type: "radio", options: { choices: [ { content: "✔ By Gabriell2ls75hz.", correct: true } ] } } };
                         responseObj.data.assessmentItem.item.itemData = JSON.stringify(itemData);
-                        sendToast("🔓 Questão exploitada.", 1000);
+                        sendToast("🤣 Questão feita krlh.", 1000);
                         return new Response(JSON.stringify(responseObj), { status: originalResponse.status, statusText: originalResponse.statusText, headers: originalResponse.headers });
                     }
                 }
@@ -86,7 +83,7 @@ function setupMain(){
                         body = JSON.stringify(bodyObj);
                         if (input instanceof Request) { input = new Request(input, { body: body }); } 
                         else init.body = body; 
-                        sendToast("🔓 Vídeo exploitado.", 1000)
+                        sendToast("🤣 Video assistido com sucesso chora khan lixo.", 1000)
                     }
                 } catch (e) { debug(`🚨 Error @ videoSpoof.js\n${e}`); }
             }
@@ -104,7 +101,7 @@ function setupMain(){
             else if (init.body) body = init.body;
             if (body && input.url.includes("mark_conversions")) {
                 try {
-                    if (body.includes("termination_event")) { sendToast("🚫 Limitador de tempo bloqueado.", 1000); return; }
+                    if (body.includes("termination_event")) { sendToast("❌ Limitador de tempo destruido krlh.", 1000); return; }
                 } catch (e) { debug(`🚨 Error @ minuteFarm.js\n${e}`); }
             }
             return originalFetch.apply(this, arguments);
@@ -130,7 +127,7 @@ function setupMain(){
                 for (const q of selectorsToCheck) {
                     findAndClickBySelector(q);
                     if (document.querySelector(q+"> div") && document.querySelector(q+"> div").innerText === "Mostrar resumo") {
-                        sendToast("🎉 Exercício concluído!", 3000);
+                        sendToast("🤣 Exercicio feito krlh chora Khan lixo.", 3000);
                         playAudio("https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/4x5g14gj.wav");
                     }
                 }
@@ -140,7 +137,7 @@ function setupMain(){
     })();
 }
 /* Inject */
-if (!/^https?:\/\/([a-z0-9-]+\.)?khanacademy\.org/.test(window.location.href)) { alert("❌ Khanware Failed to Injected!\n\nVocê precisa executar o Khanware no site do Khan Academy! (https://pt.khanacademy.org/)"); window.location.href = "https://pt.khanacademy.org/"; }
+if (!/^https?:\/\/([a-z0-9-]+\.)?khanacademy\.org/.test(window.location.href)) { alert("😩 Falha ao injetar o script. Você precisa executar o Script no site do Khan Academy! (https://pt.khanacademy.org/)"); window.location.href = "https://pt.khanacademy.org/"; }
 
 showSplashScreen();
 
@@ -148,7 +145,7 @@ loadScript('https://cdn.jsdelivr.net/npm/darkreader@4.9.92/darkreader.min.js', '
 loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css', 'toastifyCss');
 loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
 .then(async () => {    
-    sendToast("🪶 Khanware Minimal injetado com sucesso!");
+    sendToast("Script injetado com sucesso 💉🤣.");
     
     playAudio('https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/gcelzszy.wav');
     
